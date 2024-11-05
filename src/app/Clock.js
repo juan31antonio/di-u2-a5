@@ -1,12 +1,8 @@
 export default function Clock({ time }) {
     let hours = time.getHours();
-    if (hours >= 0 && hours <= 6) {
-      document.getElementById('time').className = 'night';
-    } else {
-      document.getElementById('time').className = 'day';
-    }
+    let comprube = (hours >= 0 && hours <= 6) ? 'night' : 'day'
     return (
-      <h1 id="time">
+      <h1 id="time" class={comprube}>
         {time.toLocaleTimeString()}
       </h1>
     );
